@@ -8,12 +8,14 @@ const KoaRouter = require('koa-router');
 const Handlebars = require('handlebars');
 const fs = require('fs');
 const path = require('path');
+const cors = require('kcors');
 
 let app = new Koa();
 let imageRouter = new KoaRouter();
 
 let template = Handlebars.compile(fs.readFileSync(path.join(__dirname, 'index.hbs'), 'utf8'));
 
+imageRouter.use(cors());
 imageRouter.post('/image', async ctx => {
     ctx.body = 'https://placeimg.com/640/480/animals';
 });

@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.0.10",
+    "kcors": "^2.2.1",
     "koa": "^2.3.0",
     "koa-router": "^7.2.1",
     "pug": "^2.0.0-rc.2"

@@ -15,7 +15,10 @@ let imageRouter = new KoaRouter();
 
 let template = Handlebars.compile(fs.readFileSync(path.join(__dirname, 'index.hbs'), 'utf8'));
 
-imageRouter.use(cors());
+app.use(cors({
+    credentials: true
+}));
+
 imageRouter.post('/image', async ctx => {
     ctx.body = 'https://placeimg.com/640/480/animals';
 });
